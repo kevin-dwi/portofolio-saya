@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
@@ -9,26 +9,26 @@ import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 
 export default function App() {
-  const [darkMode, setDarkMode] = useState(false);
-
-  useEffect(() => {
-    const root = document.documentElement;
-    if (darkMode) {
-      root.classList.add('dark');
-    } else {
-      root.classList.remove('dark');
-    }
-  }, [darkMode]);
-
   return (
-    <div className="min-h-screen flex flex-col relative bg-[#f5f7fa] dark:bg-[#0d1117] text-slate-800 dark:text-[#e6edf3] transition-colors duration-300">
-      {/* Subtle background pattern - light */}
-      <div className="fixed inset-0 pointer-events-none -z-20 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(124,58,237,0.06)_0%,_transparent_60%)] dark:bg-[radial-gradient(ellipse_at_top_left,_rgba(124,58,237,0.15)_0%,_transparent_60%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_rgba(8,145,178,0.05)_0%,_transparent_60%)] dark:bg-[radial-gradient(ellipse_at_bottom_right,_rgba(8,145,178,0.12)_0%,_transparent_60%)]"></div>
+    <div className="min-h-screen flex flex-col relative bg-[#080c14] text-[#e2e8f0]">
+
+      {/* Background ambient orbs */}
+      <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
+        <div className="absolute -top-32 -left-32 w-[500px] h-[500px] rounded-full bg-indigo-600/10 blur-[120px]" />
+        <div className="absolute top-1/2 -right-48 w-[600px] h-[600px] rounded-full bg-violet-600/8 blur-[140px]" />
+        <div className="absolute -bottom-32 left-1/3 w-[500px] h-[500px] rounded-full bg-cyan-500/6 blur-[120px]" />
+        {/* Subtle grid */}
+        <div
+          className="absolute inset-0 opacity-[0.025]"
+          style={{
+            backgroundImage: `linear-gradient(rgba(99,102,241,0.5) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(99,102,241,0.5) 1px, transparent 1px)`,
+            backgroundSize: '60px 60px'
+          }}
+        />
       </div>
 
-      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
+      <Navbar />
 
       <main className="flex-1 w-full px-4 md:px-8 max-w-[1200px] mx-auto">
         <Hero />

@@ -58,20 +58,29 @@ export const ACHIEVEMENTS: Achievement[] = [
   {
     title: "Juara 1 Kejurkab",
     event: "Kejuaraan Kabupaten Bulu Tangkis",
-    year: "2023",
+    year: "2020 – 2025",
     level: "Kabupaten",
     icon: "emoji_events",
     color: "gold",
     rank: "1"
   },
   {
-    title: "Juara 1 O2SN",
-    event: "Olimpiade Olahraga Siswa Nasional Tingkat Kabupaten",
-    year: "2023",
-    level: "Kabupaten",
+    title: "Juara 3 Kejurprov",
+    event: "Kejuaraan Provinsi Bulu Tangkis",
+    year: "2022 – 2025",
+    level: "Provinsi",
+    icon: "military_tech",
+    color: "bronze",
+    rank: "3"
+  },
+  {
+    title: "Juara 2 O2SN",
+    event: "Olimpiade Olahraga Siswa Nasional Tingkat Provinsi",
+    year: "2022",
+    level: "Provinsi",
     icon: "emoji_events",
-    color: "gold",
-    rank: "1"
+    color: "silver",
+    rank: "2"
   },
   {
     title: "Juara 3 POPDA",
@@ -85,11 +94,29 @@ export const ACHIEVEMENTS: Achievement[] = [
   {
     title: "Peserta POPNAS",
     event: "Pekan Olahraga Pelajar Nasional — Jakarta",
-    year: "2023",
+    year: "2025",
     level: "Nasional",
     icon: "flag",
     color: "national",
     rank: "–"
+  },
+  {
+    title: "Juara 1 O2SN",
+    event: "Olimpiade Olahraga Siswa Nasional Tingkat Kabupaten",
+    year: "2026",
+    level: "Kabupaten",
+    icon: "emoji_events",
+    color: "gold",
+    rank: "1"
+  },
+  {
+    title: "Juara 3 O2SN",
+    event: "Olimpiade Olahraga Siswa Nasional Tingkat Provinsi",
+    year: "2026",
+    level: "Provinsi",
+    icon: "military_tech",
+    color: "bronze",
+    rank: "3"
   }
 ];
 
@@ -124,8 +151,8 @@ export const PROJECTS: Project[] = [
     id: "web-portofolio",
     title: "Web Portofolio Personal",
     category: "React / TypeScript",
-    description: "Website portofolio modern dengan tema terang/gelap, animasi halus, dan desain responsif.",
-    fullDescription: "Website portofolio personal yang dibangun dengan React dan TypeScript. Menampilkan desain glassmorphism, toggle tema terang/gelap, animasi micro-interaction, tampilan responsif untuk semua perangkat, dan performa loading yang dioptimalkan.",
+    description: "Website portofolio modern dengan animasi halus dan desain responsif.",
+    fullDescription: "Website portofolio personal yang dibangun dengan React dan TypeScript. Menampilkan desain glassmorphism, animasi micro-interaction, tampilan responsif untuk semua perangkat, dan performa loading yang dioptimalkan.",
     tags: ["React", "TypeScript", "Tailwind CSS", "Vite"],
     imageUrl: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&q=80",
     demoUrl: "#",
