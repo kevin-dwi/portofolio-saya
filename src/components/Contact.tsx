@@ -22,100 +22,115 @@ export const Contact: React.FC = () => {
     setTimeout(() => setCopiedEmail(false), 2500);
   };
 
-  const inputClass = "w-full bg-white dark:bg-[#1d2022]/80 border border-slate-200 dark:border-[#494454] rounded-xl px-4 py-3 text-slate-800 dark:text-[#e0e3e5] placeholder-slate-400 dark:placeholder-[#cbc3d7]/40 focus:outline-none focus:border-violet-400 dark:focus:border-[#4cd7f6] focus:ring-1 focus:ring-violet-300 dark:focus:ring-[#4cd7f6] transition-colors text-sm shadow-sm";
+  const inputClass = "w-full bg-slate-50 dark:bg-[#0d1117] border border-slate-200 dark:border-white/[0.08] rounded-xl px-4 py-3 text-slate-800 dark:text-slate-200 placeholder-slate-400 dark:placeholder-slate-600 focus:outline-none focus:border-violet-400 dark:focus:border-violet-500 focus:ring-2 focus:ring-violet-100 dark:focus:ring-violet-500/10 transition-all text-sm";
 
   return (
-    <section
-      id="contact"
-      className="py-16 md:py-24 px-4 md:px-16 max-w-[1280px] mx-auto relative z-10 my-12 glass-panel rounded-3xl border border-slate-200 dark:border-white/10 shadow-xl"
-    >
-      <div className="rounded-2xl p-6 md:p-12 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-64 h-64 bg-violet-200/30 dark:bg-[#d0bcff]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-cyan-200/30 dark:bg-[#4cd7f6]/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
-
-        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Left */}
-          <div className="flex flex-col gap-6 justify-between">
+    <section id="contact" className="py-16 md:py-20">
+      <div className="section-card p-8 md:p-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+          {/* Kiri */}
+          <div className="flex flex-col gap-6">
             <div>
-              <div className="flex items-center gap-4 mb-3">
-                <span className="font-mono-caps text-violet-500 dark:text-[#d0bcff] uppercase tracking-widest text-xs">
-                  Get in touch
-                </span>
-                <div className="h-[1px] w-12 bg-violet-400 dark:bg-[#d0bcff]"></div>
-              </div>
-              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-slate-800 dark:text-[#e0e3e5] leading-tight">
-                Let's build something <br />
-                <span className="text-cyan-500 dark:text-[#4cd7f6]">amazing.</span>
+              <span className="section-label mb-4 inline-flex">Kontak</span>
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-4 leading-tight">
+                Mari Berkolaborasi
               </h2>
-              <p className="text-base text-slate-500 dark:text-[#cbc3d7] max-w-md mt-4 leading-relaxed">
-                Currently open for freelance opportunities, collaborations, or just a chat about software engineering and the future of web tech.
+              <p className="text-slate-500 dark:text-slate-400 mt-3 text-[15px] leading-relaxed">
+                Terbuka untuk peluang freelance, kolaborasi proyek, atau sekadar ngobrol tentang teknologi dan pengembangan web.
               </p>
             </div>
 
-            <div className="pt-6 flex items-center gap-4">
+            {/* Contact info */}
+            <div className="space-y-3">
               <button
                 onClick={handleCopyEmail}
-                className="w-12 h-12 rounded-full glass-panel flex items-center justify-center text-slate-500 dark:text-[#cbc3d7] hover:text-violet-600 dark:hover:text-[#d0bcff] hover:border-violet-400 dark:hover:border-[#d0bcff] transition-all cursor-pointer relative"
-                title="Copy Email"
+                className="w-full flex items-center gap-4 p-4 card text-left group cursor-pointer"
               >
-                <span className="material-symbols-outlined">mail</span>
-                {copiedEmail && (
-                  <span className="absolute -top-8 bg-violet-500 dark:bg-[#d0bcff] text-white dark:text-[#340080] font-mono-caps text-[10px] px-2 py-0.5 rounded shadow">
-                    Copied!
-                  </span>
-                )}
+                <div className="w-10 h-10 rounded-xl bg-violet-50 dark:bg-violet-500/10 text-violet-600 dark:text-violet-400 flex items-center justify-center border border-violet-100 dark:border-violet-500/20 flex-shrink-0">
+                  <span className="material-symbols-outlined text-[18px]">mail</span>
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className="font-mono-caps text-[10px] text-slate-400 uppercase">Email</p>
+                  <p className="text-sm font-medium text-slate-700 dark:text-slate-300 truncate">{PERSONAL_INFO.socials.email}</p>
+                </div>
+                <span className={`font-mono-caps text-[10px] px-2 py-1 rounded-full transition-all ${copiedEmail ? 'bg-emerald-100 text-emerald-600 dark:bg-emerald-500/10 dark:text-emerald-400' : 'bg-slate-100 dark:bg-white/5 text-slate-400 group-hover:bg-violet-50 group-hover:text-violet-600 dark:group-hover:bg-violet-500/10 dark:group-hover:text-violet-400'}`}>
+                  {copiedEmail ? 'Tersalin!' : 'Salin'}
+                </span>
               </button>
+
+              <a
+                href={PERSONAL_INFO.socials.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full flex items-center gap-4 p-4 card group"
+              >
+                <div className="w-10 h-10 rounded-xl bg-pink-50 dark:bg-pink-500/10 text-pink-600 dark:text-pink-400 flex items-center justify-center border border-pink-100 dark:border-pink-500/20 flex-shrink-0">
+                  <span className="material-symbols-outlined text-[18px]">photo_camera</span>
+                </div>
+                <div className="flex-1">
+                  <p className="font-mono-caps text-[10px] text-slate-400 uppercase">Instagram</p>
+                  <p className="text-sm font-medium text-slate-700 dark:text-slate-300">@kvin.dwyrms_</p>
+                </div>
+                <span className="material-symbols-outlined text-[16px] text-slate-300 dark:text-slate-600 group-hover:text-pink-500 transition-colors">arrow_outward</span>
+              </a>
+
               <a
                 href={PERSONAL_INFO.socials.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 rounded-full glass-panel flex items-center justify-center text-slate-500 dark:text-[#cbc3d7] hover:text-cyan-500 dark:hover:text-[#4cd7f6] hover:border-cyan-400 dark:hover:border-[#4cd7f6] transition-all cursor-pointer"
-                title="GitHub Profile"
+                className="w-full flex items-center gap-4 p-4 card group"
               >
-                <span className="material-symbols-outlined">code</span>
+                <div className="w-10 h-10 rounded-xl bg-slate-100 dark:bg-white/5 text-slate-600 dark:text-slate-400 flex items-center justify-center border border-slate-200 dark:border-white/10 flex-shrink-0">
+                  <span className="material-symbols-outlined text-[18px]">code</span>
+                </div>
+                <div className="flex-1">
+                  <p className="font-mono-caps text-[10px] text-slate-400 uppercase">GitHub</p>
+                  <p className="text-sm font-medium text-slate-700 dark:text-slate-300">github.com/kdaay</p>
+                </div>
+                <span className="material-symbols-outlined text-[16px] text-slate-300 dark:text-slate-600 group-hover:text-slate-600 dark:group-hover:text-slate-300 transition-colors">arrow_outward</span>
               </a>
             </div>
           </div>
 
-          {/* Right Form */}
-          <div className="bg-white/80 dark:bg-[#191c1e]/70 backdrop-blur-md p-6 sm:p-8 rounded-2xl border border-slate-200 dark:border-white/10 shadow-lg">
+          {/* Kanan — Form */}
+          <div className="bg-slate-50 dark:bg-[#0d1117] rounded-2xl p-6 border border-slate-200 dark:border-white/[0.06]">
             {submitted ? (
-              <div className="py-12 flex flex-col items-center justify-center text-center space-y-4">
-                <div className="w-16 h-16 rounded-full bg-cyan-100 dark:bg-[#4cd7f6]/20 border border-cyan-400 dark:border-[#4cd7f6] text-cyan-500 dark:text-[#4cd7f6] flex items-center justify-center">
-                  <span className="material-symbols-outlined text-3xl">check_circle</span>
+              <div className="h-full flex flex-col items-center justify-center text-center gap-4 py-8">
+                <div className="w-14 h-14 rounded-2xl bg-emerald-100 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center border border-emerald-200 dark:border-emerald-500/20">
+                  <span className="material-symbols-outlined text-2xl">check_circle</span>
                 </div>
-                <h3 className="font-display text-2xl font-bold text-slate-800 dark:text-[#e0e3e5]">
-                  Message Sent!
-                </h3>
-                <p className="text-sm text-slate-500 dark:text-[#cbc3d7] max-w-xs">
-                  Thank you for reaching out, {formData.name || 'friend'}. Kevin will get back to you shortly!
-                </p>
+                <div>
+                  <h3 className="font-display text-xl font-bold text-slate-900 dark:text-white">Pesan Terkirim!</h3>
+                  <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
+                    Terima kasih, {formData.name || 'teman'}. Kevin akan segera membalas!
+                  </p>
+                </div>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                 <div>
-                  <label htmlFor="name" className="block font-mono-caps text-xs text-slate-500 dark:text-[#cbc3d7] mb-2">Name</label>
+                  <label htmlFor="name" className="block font-mono-caps text-[10px] text-slate-400 uppercase mb-1.5">Nama</label>
                   <input type="text" id="name" required value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    placeholder="John Doe" className={inputClass} />
+                    placeholder="Nama lengkap kamu" className={inputClass} />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block font-mono-caps text-xs text-slate-500 dark:text-[#cbc3d7] mb-2">Email</label>
+                  <label htmlFor="email" className="block font-mono-caps text-[10px] text-slate-400 uppercase mb-1.5">Email</label>
                   <input type="email" id="email" required value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    placeholder="john@example.com" className={inputClass} />
+                    placeholder="email@contoh.com" className={inputClass} />
                 </div>
                 <div>
-                  <label htmlFor="message" className="block font-mono-caps text-xs text-slate-500 dark:text-[#cbc3d7] mb-2">Message</label>
-                  <textarea id="message" required rows={4} value={formData.message}
+                  <label htmlFor="message" className="block font-mono-caps text-[10px] text-slate-400 uppercase mb-1.5">Pesan</label>
+                  <textarea id="message" required rows={5} value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    placeholder="Hello Kevin..." className={`${inputClass} resize-none`}></textarea>
+                    placeholder="Halo Kevin, saya ingin..." className={`${inputClass} resize-none`}></textarea>
                 </div>
                 <button type="submit"
-                  className="mt-2 btn-primary text-white font-mono-caps uppercase tracking-wider py-4 px-6 rounded-xl flex items-center justify-center gap-2 group transition-all w-full shadow-lg cursor-pointer hover:scale-[1.01]"
+                  className="btn-primary text-white font-mono-caps uppercase tracking-wider py-3.5 px-6 rounded-xl flex items-center justify-center gap-2 group transition-all w-full cursor-pointer mt-1"
                 >
-                  <span>Send Message</span>
-                  <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">send</span>
+                  <span>Kirim Pesan</span>
+                  <span className="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">send</span>
                 </button>
               </form>
             )}

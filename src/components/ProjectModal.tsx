@@ -10,93 +10,84 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
   if (!project) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fadeIn">
-      <div className="relative w-full max-w-2xl glass-panel bg-[#1d2022]/95 border border-white/10 rounded-2xl p-6 md:p-8 shadow-2xl max-h-[90vh] overflow-y-auto">
-        {/* Close Button */}
-        <button
-          onClick={onClose}
-          className="absolute top-4 right-4 p-2 rounded-full bg-white/5 hover:bg-white/10 text-[#cbc3d7] hover:text-white transition-colors cursor-pointer border border-white/10"
-          aria-label="Close modal"
-        >
-          <span className="material-symbols-outlined text-xl">close</span>
-        </button>
-
-        {/* Modal Header */}
-        <div className="flex items-center gap-2 mb-3">
-          <span className="px-3 py-1 rounded-full bg-[#d0bcff]/10 text-[#d0bcff] border border-[#d0bcff]/20 font-mono-caps text-xs">
-            {project.category}
-          </span>
-          {project.featured && (
-            <span className="px-3 py-1 rounded-full bg-[#4cd7f6]/10 text-[#4cd7f6] border border-[#4cd7f6]/20 font-mono-caps text-xs">
-              Featured Work
-            </span>
-          )}
-        </div>
-
-        <h3 className="font-display text-2xl md:text-3xl font-bold text-[#e0e3e5] mb-3">
-          {project.title}
-        </h3>
-
-        {/* Project Thumbnail / Visual Representation */}
-        <div className="w-full h-48 md:h-64 rounded-xl overflow-hidden glass-panel border border-white/10 my-4 relative flex items-center justify-center bg-[#101415]">
-          {project.imageUrl ? (
-            <img
-              src={project.imageUrl}
-              alt={project.title}
-              className="w-full h-full object-cover opacity-70"
-            />
-          ) : (
-            <div className="flex flex-col items-center gap-2 text-[#d0bcff]">
-              <span className="material-symbols-outlined text-5xl">{project.icon || 'code'}</span>
-              <span className="font-mono-caps text-xs uppercase text-[#cbc3d7]">
-                {project.title} Architecture
-              </span>
-            </div>
-          )}
-        </div>
-
-        {/* Description */}
-        <div className="space-y-3 text-sm md:text-base text-[#cbc3d7] mb-6">
-          <p className="font-semibold text-[#e0e3e5]">{project.description}</p>
-          <p className="leading-relaxed text-[#cbc3d7]/90">{project.fullDescription}</p>
-        </div>
-
-        {/* Tags */}
-        <div className="mb-6">
-          <h4 className="font-mono-caps text-xs text-[#d0bcff] uppercase mb-2">Technologies Used</h4>
-          <div className="flex flex-wrap gap-2">
-            {project.tags.map((tag, idx) => (
-              <span
-                key={idx}
-                className="px-3 py-1 rounded-full bg-white/5 text-[#e0e3e5] border border-white/10 font-mono-caps text-xs"
-              >
-                {tag}
-              </span>
-            ))}
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-fadeIn"
+      onClick={onClose}
+    >
+      <div
+        className="relative w-full max-w-2xl bg-white dark:bg-[#161b22] border border-slate-200 dark:border-white/[0.08] rounded-2xl shadow-2xl max-h-[90vh] overflow-y-auto"
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* Thumbnail */}
+        {project.imageUrl && (
+          <div className="w-full h-52 overflow-hidden rounded-t-2xl">
+            <img src={project.imageUrl} alt={project.title} className="w-full h-full object-cover" />
           </div>
-        </div>
+        )}
 
-        {/* Actions */}
-        <div className="flex items-center gap-4 pt-4 border-t border-white/10">
-          <a
-            href={project.demoUrl || '#'}
-            onClick={(e) => {
-              if (!project.demoUrl || project.demoUrl === '#') e.preventDefault();
-            }}
-            className="btn-primary text-white font-mono-caps uppercase tracking-wider py-3 px-6 rounded-lg flex items-center gap-2 text-xs transition-transform hover:scale-105"
+        <div className="p-6 md:p-8">
+          {/* Close */}
+          <button
+            onClick={onClose}
+            className="absolute top-4 right-4 p-2 rounded-xl bg-white/80 dark:bg-white/5 hover:bg-slate-100 dark:hover:bg-white/10 text-slate-500 dark:text-slate-400 transition-colors cursor-pointer border border-slate-200 dark:border-white/10 backdrop-blur-sm"
+            aria-label="Tutup"
           >
-            <span>Live Preview</span>
-            <span className="material-symbols-outlined text-sm">arrow_outward</span>
-          </a>
-          <a
-            href={project.githubUrl || '#'}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="glass-panel text-[#e0e3e5] hover:text-[#d0bcff] font-mono-caps uppercase tracking-wider py-3 px-6 rounded-lg flex items-center gap-2 text-xs border border-white/10 hover:border-[#d0bcff] transition-colors"
-          >
-            <span>Source Code</span>
-            <span className="material-symbols-outlined text-sm">code</span>
-          </a>
+            <span className="material-symbols-outlined text-[18px]">close</span>
+          </button>
+
+          {/* Badges */}
+          <div className="flex items-center gap-2 mb-3">
+            <span className="font-mono-caps text-[10px] bg-violet-50 dark:bg-violet-500/10 text-violet-600 dark:text-violet-400 border border-violet-100 dark:border-violet-500/20 px-3 py-1 rounded-full">
+              {project.category}
+            </span>
+            {project.featured && (
+              <span className="font-mono-caps text-[10px] bg-amber-50 dark:bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-100 dark:border-amber-500/20 px-3 py-1 rounded-full">
+                Unggulan
+              </span>
+            )}
+          </div>
+
+          <h3 className="font-display text-2xl font-bold text-slate-900 dark:text-white mb-3">
+            {project.title}
+          </h3>
+
+          <div className="space-y-2 text-[15px] text-slate-500 dark:text-slate-400 mb-5">
+            <p className="font-medium text-slate-700 dark:text-slate-300">{project.description}</p>
+            <p className="leading-relaxed">{project.fullDescription}</p>
+          </div>
+
+          {/* Tags */}
+          <div className="mb-6">
+            <p className="font-mono-caps text-[10px] text-slate-400 uppercase mb-2">Teknologi</p>
+            <div className="flex flex-wrap gap-2">
+              {project.tags.map((tag, idx) => (
+                <span key={idx} className="font-mono-caps text-[10px] px-3 py-1 rounded-full bg-slate-100 dark:bg-white/5 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-white/[0.08]">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Actions */}
+          <div className="flex items-center gap-3 pt-4 border-t border-slate-100 dark:border-white/[0.06]">
+            <a
+              href={project.demoUrl || '#'}
+              onClick={(e) => { if (!project.demoUrl || project.demoUrl === '#') e.preventDefault(); }}
+              className="btn-primary text-white font-mono-caps uppercase tracking-wider py-2.5 px-5 rounded-xl flex items-center gap-2 text-[11px] cursor-pointer"
+            >
+              <span>Demo Langsung</span>
+              <span className="material-symbols-outlined text-sm">arrow_outward</span>
+            </a>
+            <a
+              href={project.githubUrl || '#'}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-mono-caps uppercase tracking-wider py-2.5 px-5 rounded-xl flex items-center gap-2 text-[11px] border border-slate-200 dark:border-white/10 text-slate-600 dark:text-slate-400 hover:border-violet-400 hover:text-violet-600 dark:hover:text-violet-400 transition-colors bg-white dark:bg-white/5"
+            >
+              <span>Kode Sumber</span>
+              <span className="material-symbols-outlined text-sm">code</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>

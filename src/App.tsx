@@ -4,6 +4,7 @@ import { Hero } from './components/Hero';
 import { About } from './components/About';
 import { Skills } from './components/Skills';
 import { Projects } from './components/Projects';
+import { Achievements } from './components/Achievements';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 
@@ -20,27 +21,24 @@ export default function App() {
   }, [darkMode]);
 
   return (
-    <div className="min-h-screen flex flex-col relative bg-slate-50 text-slate-800 dark:bg-[#0f1214] dark:text-[#e0e3e5] transition-colors duration-300">
-      {/* Background Orbs */}
+    <div className="min-h-screen flex flex-col relative bg-[#f5f7fa] dark:bg-[#0d1117] text-slate-800 dark:text-[#e6edf3] transition-colors duration-300">
+      {/* Subtle background pattern - light */}
       <div className="fixed inset-0 pointer-events-none -z-20 overflow-hidden">
-        <div className="absolute -top-40 -left-40 w-[600px] h-[600px] bg-violet-200/40 dark:bg-[#340080]/20 rounded-full blur-[120px] opacity-60 dark:opacity-50 animate-pulse"></div>
-        <div className="absolute top-1/3 -right-40 w-[500px] h-[500px] bg-cyan-200/30 dark:bg-[#004e5c]/20 rounded-full blur-[120px] opacity-50 dark:opacity-40"></div>
-        <div className="absolute bottom-10 left-1/4 w-[700px] h-[700px] bg-violet-100/30 dark:bg-[#340080]/15 rounded-full blur-[140px] opacity-40 dark:opacity-30"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(124,58,237,0.06)_0%,_transparent_60%)] dark:bg-[radial-gradient(ellipse_at_top_left,_rgba(124,58,237,0.15)_0%,_transparent_60%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_rgba(8,145,178,0.05)_0%,_transparent_60%)] dark:bg-[radial-gradient(ellipse_at_bottom_right,_rgba(8,145,178,0.12)_0%,_transparent_60%)]"></div>
       </div>
 
-      {/* Navigation */}
       <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
 
-      {/* Main Content */}
-      <main className="flex-1 w-full">
+      <main className="flex-1 w-full px-4 md:px-8 max-w-[1200px] mx-auto">
         <Hero />
         <About />
         <Skills />
         <Projects />
+        <Achievements />
         <Contact />
       </main>
 
-      {/* Footer */}
       <Footer />
     </div>
   );

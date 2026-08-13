@@ -20,39 +20,88 @@ export interface SkillCategory {
   skills: { name: string; level: number; tag: string }[];
 }
 
+export interface Achievement {
+  title: string;
+  event: string;
+  year: string;
+  level: string;
+  icon: string;
+  color: string;
+  rank: string;
+}
+
 export const PERSONAL_INFO = {
   name: "Kevin Dwi Andhika",
   surname: "Ahmad Yarmis",
   fullName: "Kevin Dwi Andhika Ahmad Yarmis",
-  role: "Software Engineering Student | Future Tech Innovator",
+  role: "Siswa Rekayasa Perangkat Lunak",
   specialty: "RPL Specialist",
-  tagline: "Building elegant, high-performance web experiences through modern architecture.",
+  tagline: "Membangun pengalaman web yang elegan dan berperforma tinggi melalui arsitektur modern.",
   about: [
-    "Hello! I'm Kevin, an enthusiastic SMK student specializing in Rekayasa Perangkat Lunak (RPL). My journey in software engineering is driven by a profound curiosity for how things work beneath the surface.",
-    "I focus on bridging the gap between rigorous back-end architecture and fluid, engaging user experiences. I believe that good code should not only function flawlessly but also feel intuitive and responsive to the user.",
-    "Currently, I'm expanding my knowledge in modern web stacks, constantly experimenting with new frameworks, and preparing myself to contribute meaningfully to the tech industry."
+    "Halo! Saya Kevin, siswa SMK yang antusias dengan jurusan Rekayasa Perangkat Lunak (RPL). Perjalanan saya di dunia software engineering didorong oleh rasa ingin tahu yang mendalam tentang bagaimana teknologi bekerja di balik layar.",
+    "Saya fokus pada pengembangan web modern, mulai dari membangun antarmuka yang responsif hingga merancang arsitektur backend yang skalabel. Saya percaya bahwa kode yang baik bukan hanya berfungsi dengan sempurna, tetapi juga terasa intuitif bagi pengguna.",
+    "Saat ini saya terus memperluas pengetahuan di bidang web stack modern, bereksperimen dengan framework terbaru, dan mempersiapkan diri untuk berkontribusi secara nyata di industri teknologi."
   ],
   education: [
-    { title: "SMK", subtitle: "Vocational High School", border: "border-l-[#d0bcff]" },
-    { title: "RPL", subtitle: "Software Engineering", border: "border-l-[#4cd7f6]" }
+    { title: "SMK", subtitle: "Sekolah Menengah Kejuruan", border: "border-l-violet-500" },
+    { title: "RPL", subtitle: "Rekayasa Perangkat Lunak", border: "border-l-cyan-500" }
   ],
   socials: {
     github: "https://github.com",
     linkedin: "https://linkedin.com",
-    twitter: "https://twitter.com",
-    email: "john@example.com"
+    instagram: "https://www.instagram.com/kvin.dwyrms_?igsh=c3hhMnAyajF0ZHVl",
+    email: "kevin@example.com"
   }
 };
 
+export const ACHIEVEMENTS: Achievement[] = [
+  {
+    title: "Juara 1 Kejurkab",
+    event: "Kejuaraan Kabupaten Bulu Tangkis",
+    year: "2023",
+    level: "Kabupaten",
+    icon: "emoji_events",
+    color: "gold",
+    rank: "1"
+  },
+  {
+    title: "Juara 1 O2SN",
+    event: "Olimpiade Olahraga Siswa Nasional Tingkat Kabupaten",
+    year: "2023",
+    level: "Kabupaten",
+    icon: "emoji_events",
+    color: "gold",
+    rank: "1"
+  },
+  {
+    title: "Juara 3 POPDA",
+    event: "Pekan Olahraga Pelajar Daerah",
+    year: "2023",
+    level: "Daerah",
+    icon: "military_tech",
+    color: "bronze",
+    rank: "3"
+  },
+  {
+    title: "Peserta POPNAS",
+    event: "Pekan Olahraga Pelajar Nasional — Jakarta",
+    year: "2023",
+    level: "Nasional",
+    icon: "flag",
+    color: "national",
+    rank: "–"
+  }
+];
+
 export const PROJECTS: Project[] = [
   {
-    id: "system-architecture",
-    title: "System Architecture Visualization",
-    category: "React / Node.js",
-    description: "Interactive webGL dashboard for monitoring complex microservice architectures in real-time.",
-    fullDescription: "A comprehensive real-time dashboard built for visual telemetry of distributed systems. Features live webSockets monitoring, node network graphs, latency heatmap analytics, and reactive node failure simulation.",
-    tags: ["React", "Node.js", "WebGL", "TypeScript", "Tailwind CSS"],
-    imageUrl: "https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg",
+    id: "sistem-absensi",
+    title: "Sistem Absensi Digital",
+    category: "PHP / MySQL",
+    description: "Aplikasi absensi berbasis web dengan fitur QR Code, laporan otomatis, dan manajemen kelas.",
+    fullDescription: "Sistem absensi digital yang dibangun menggunakan PHP dan MySQL. Dilengkapi fitur scan QR Code untuk absensi cepat, dashboard admin untuk monitoring kehadiran, laporan otomatis dalam format PDF/Excel, dan manajemen data siswa per kelas.",
+    tags: ["PHP", "MySQL", "QR Code", "Bootstrap", "AJAX"],
+    imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
     demoUrl: "#",
     githubUrl: "https://github.com",
     featured: true,
@@ -62,23 +111,23 @@ export const PROJECTS: Project[] = [
     id: "inventory-api",
     title: "Inventory API",
     category: "PHP / MySQL",
-    description: "Robust RESTful API built with PHP and MySQL for seamless inventory management.",
-    fullDescription: "High-performance backend API system implementing JWT token authentication, rate limiting, relational database triggers, automated stock alerts, and exportable audit logs for enterprise resource planning.",
+    description: "RESTful API untuk manajemen inventaris dengan autentikasi JWT dan laporan stok otomatis.",
+    fullDescription: "Sistem API backend berperforma tinggi yang mengimplementasikan autentikasi token JWT, rate limiting, trigger database relasional, notifikasi stok otomatis, dan log audit yang dapat diekspor untuk perencanaan sumber daya perusahaan.",
     tags: ["PHP", "MySQL", "REST API", "JWT Auth"],
-    icon: "database",
+    imageUrl: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80",
     demoUrl: "#",
     githubUrl: "https://github.com",
     featured: false,
     size: "small"
   },
   {
-    id: "ecommerce-frontend",
-    title: "E-Commerce Frontend",
-    category: "React / UI Design",
-    description: "Modern, dark-themed mobile & web application interface for seamless digital shopping.",
-    fullDescription: "Sleek e-commerce client UI featuring translucent glassmorphism cards, micro-interactions, responsive shopping cart drawer, dark mode toggle, and accelerated checkout flow with instant state recalculation.",
-    tags: ["React", "Tailwind CSS", "Motion", "UI/UX"],
-    imageUrl: "https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg",
+    id: "web-portofolio",
+    title: "Web Portofolio Personal",
+    category: "React / TypeScript",
+    description: "Website portofolio modern dengan tema terang/gelap, animasi halus, dan desain responsif.",
+    fullDescription: "Website portofolio personal yang dibangun dengan React dan TypeScript. Menampilkan desain glassmorphism, toggle tema terang/gelap, animasi micro-interaction, tampilan responsif untuk semua perangkat, dan performa loading yang dioptimalkan.",
+    tags: ["React", "TypeScript", "Tailwind CSS", "Vite"],
+    imageUrl: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&q=80",
     demoUrl: "#",
     githubUrl: "https://github.com",
     featured: false,
@@ -88,33 +137,33 @@ export const PROJECTS: Project[] = [
 
 export const SKILL_CATEGORIES: SkillCategory[] = [
   {
-    title: "Frontend Development",
-    description: "Crafting intuitive, performant user interfaces with high responsive fluidity.",
+    title: "Pengembangan Frontend",
+    description: "Membangun antarmuka yang intuitif dan responsif dengan performa tinggi.",
     icon: "code",
     skills: [
-      { name: "React.js / Next.js", level: 90, tag: "Primary Framework" },
-      { name: "TypeScript", level: 88, tag: "Language" },
-      { name: "Tailwind CSS", level: 95, tag: "Styling Engine" },
-      { name: "HTML5 / CSS3 / ES6+", level: 92, tag: "Core Web" }
+      { name: "React.js / Next.js", level: 90, tag: "Framework Utama" },
+      { name: "TypeScript", level: 88, tag: "Bahasa" },
+      { name: "Tailwind CSS", level: 95, tag: "Styling" },
+      { name: "HTML5 / CSS3 / ES6+", level: 92, tag: "Web Dasar" }
     ]
   },
   {
-    title: "Backend & Systems",
-    description: "Engineering scalable APIs, database schemas, and robust business logic.",
+    title: "Backend & Sistem",
+    description: "Merancang API yang skalabel, skema database, dan logika bisnis yang kuat.",
     icon: "dns",
     skills: [
       { name: "Node.js / Express", level: 85, tag: "Runtime" },
-      { name: "PHP / Laravel", level: 82, tag: "Backend Framework" },
-      { name: "RESTful API Architecture", level: 90, tag: "API Design" },
-      { name: "OOP & Clean Code", level: 88, tag: "Software Principles" }
+      { name: "PHP / Laravel", level: 82, tag: "Framework Backend" },
+      { name: "Arsitektur RESTful API", level: 90, tag: "Desain API" },
+      { name: "OOP & Clean Code", level: 88, tag: "Prinsip Software" }
     ]
   },
   {
     title: "Database & DevOps",
-    description: "Structuring persistent data layers and efficient build/deploy pipelines.",
+    description: "Mengelola lapisan data persisten dan pipeline build/deploy yang efisien.",
     icon: "database",
     skills: [
-      { name: "MySQL / MariaDB", level: 86, tag: "Relational DB" },
+      { name: "MySQL / MariaDB", level: 86, tag: "DB Relasional" },
       { name: "PostgreSQL", level: 78, tag: "SQL Engine" },
       { name: "Git & GitHub", level: 90, tag: "Version Control" },
       { name: "Vite / Build Tools", level: 85, tag: "Dev Tooling" }
