@@ -50,6 +50,20 @@ export const About: React.FC = () => {
               ))}
             </div>
 
+            {/* Hobi */}
+            <div>
+              <p className="font-mono-caps text-[10px] text-slate-600 uppercase mb-3">Hobi</p>
+              <div className="flex flex-wrap gap-2">
+                {PERSONAL_INFO.hobbies.map((h, i) => (
+                  <div key={i} className="flex items-center gap-2 px-3.5 py-2 rounded-xl border border-white/[0.07] bg-white/[0.03] text-slate-300">
+                    <span className="material-symbols-outlined text-[15px] text-indigo-400">{h.icon}</span>
+                    <span className="text-sm font-medium">{h.label}</span>
+                    <span className="text-[11px] text-slate-500">— {h.desc}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
             {/* Socials */}
             <div className="flex items-center gap-3 pt-1">
               <a

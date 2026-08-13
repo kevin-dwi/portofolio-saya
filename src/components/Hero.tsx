@@ -76,7 +76,7 @@ export const Hero: React.FC = () => {
         <div className="flex items-center gap-10 mt-4 pt-6 w-full max-w-xs justify-center" style={{ borderTop: '1px solid rgba(99,120,180,0.15)' }}>
           {[
             { value: '3+',  label: 'Proyek' },
-            { value: '7',   label: 'Prestasi' },
+            { value: '19',  label: 'Prestasi' },
             { value: 'RPL', label: 'Jurusan' },
           ].map((s) => (
             <div key={s.label} className="text-center">

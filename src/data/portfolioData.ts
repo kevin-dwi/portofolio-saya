@@ -28,6 +28,7 @@ export interface Achievement {
   icon: string;
   color: string;
   rank: string;
+  category: 'olahraga' | 'akademik';
 }
 
 export const PERSONAL_INFO = {
@@ -42,6 +43,10 @@ export const PERSONAL_INFO = {
     "Saya fokus pada pengembangan web modern, mulai dari membangun antarmuka yang responsif hingga merancang arsitektur backend yang skalabel. Saya percaya bahwa kode yang baik bukan hanya berfungsi dengan sempurna, tetapi juga terasa intuitif bagi pengguna.",
     "Saat ini saya terus memperluas pengetahuan di bidang web stack modern, bereksperimen dengan framework terbaru, dan mempersiapkan diri untuk berkontribusi secara nyata di industri teknologi."
   ],
+  hobbies: [
+    { label: "Olahraga", icon: "sports_tennis", desc: "Bulu tangkis & aktivitas fisik" },
+    { label: "Main Game", icon: "sports_esports", desc: "Gaming & strategi digital" },
+  ],
   education: [
     { title: "SMK", subtitle: "Sekolah Menengah Kejuruan", border: "border-l-violet-500" },
     { title: "RPL", subtitle: "Rekayasa Perangkat Lunak", border: "border-l-cyan-500" }
@@ -55,69 +60,27 @@ export const PERSONAL_INFO = {
 };
 
 export const ACHIEVEMENTS: Achievement[] = [
-  {
-    title: "Juara 1 Kejurkab",
-    event: "Kejuaraan Kabupaten Bulu Tangkis",
-    year: "2020 – 2025",
-    level: "Kabupaten",
-    icon: "emoji_events",
-    color: "gold",
-    rank: "1"
-  },
-  {
-    title: "Juara 3 Kejurprov",
-    event: "Kejuaraan Provinsi Bulu Tangkis",
-    year: "2022 – 2025",
-    level: "Provinsi",
-    icon: "military_tech",
-    color: "bronze",
-    rank: "3"
-  },
-  {
-    title: "Juara 2 O2SN",
-    event: "Olimpiade Olahraga Siswa Nasional Tingkat Provinsi",
-    year: "2022",
-    level: "Provinsi",
-    icon: "emoji_events",
-    color: "silver",
-    rank: "2"
-  },
-  {
-    title: "Juara 3 POPDA",
-    event: "Pekan Olahraga Pelajar Daerah",
-    year: "2023",
-    level: "Daerah",
-    icon: "military_tech",
-    color: "bronze",
-    rank: "3"
-  },
-  {
-    title: "Peserta POPNAS",
-    event: "Pekan Olahraga Pelajar Nasional — Jakarta",
-    year: "2025",
-    level: "Nasional",
-    icon: "flag",
-    color: "national",
-    rank: "–"
-  },
-  {
-    title: "Juara 1 O2SN",
-    event: "Olimpiade Olahraga Siswa Nasional Tingkat Kabupaten",
-    year: "2026",
-    level: "Kabupaten",
-    icon: "emoji_events",
-    color: "gold",
-    rank: "1"
-  },
-  {
-    title: "Juara 3 O2SN",
-    event: "Olimpiade Olahraga Siswa Nasional Tingkat Provinsi",
-    year: "2026",
-    level: "Provinsi",
-    icon: "military_tech",
-    color: "bronze",
-    rank: "3"
-  }
+  // ── OLAHRAGA ──
+  { title: "Juara 1 Kejurkab", event: "Kejuaraan Kabupaten Bulu Tangkis", year: "2020", level: "Kabupaten", icon: "emoji_events", color: "gold",     rank: "1", category: "olahraga" },
+  { title: "Juara 1 Kejurkab", event: "Kejuaraan Kabupaten Bulu Tangkis", year: "2021", level: "Kabupaten", icon: "emoji_events", color: "gold",     rank: "1", category: "olahraga" },
+  { title: "Juara 1 Kejurkab", event: "Kejuaraan Kabupaten Bulu Tangkis", year: "2022", level: "Kabupaten", icon: "emoji_events", color: "gold",     rank: "1", category: "olahraga" },
+  { title: "Juara 1 Kejurkab", event: "Kejuaraan Kabupaten Bulu Tangkis", year: "2023", level: "Kabupaten", icon: "emoji_events", color: "gold",     rank: "1", category: "olahraga" },
+  { title: "Juara 1 Kejurkab", event: "Kejuaraan Kabupaten Bulu Tangkis", year: "2024", level: "Kabupaten", icon: "emoji_events", color: "gold",     rank: "1", category: "olahraga" },
+  { title: "Juara 1 Kejurkab", event: "Kejuaraan Kabupaten Bulu Tangkis", year: "2025", level: "Kabupaten", icon: "emoji_events", color: "gold",     rank: "1", category: "olahraga" },
+  { title: "Juara 3 Kejurprov", event: "Kejuaraan Provinsi Bulu Tangkis", year: "2022", level: "Provinsi",  icon: "military_tech", color: "bronze",  rank: "3", category: "olahraga" },
+  { title: "Juara 3 Kejurprov", event: "Kejuaraan Provinsi Bulu Tangkis", year: "2023", level: "Provinsi",  icon: "military_tech", color: "bronze",  rank: "3", category: "olahraga" },
+  { title: "Juara 3 Kejurprov", event: "Kejuaraan Provinsi Bulu Tangkis", year: "2024", level: "Provinsi",  icon: "military_tech", color: "bronze",  rank: "3", category: "olahraga" },
+  { title: "Juara 3 Kejurprov", event: "Kejuaraan Provinsi Bulu Tangkis", year: "2025", level: "Provinsi",  icon: "military_tech", color: "bronze",  rank: "3", category: "olahraga" },
+  { title: "Juara 2 O2SN",      event: "O2SN Tingkat Provinsi",           year: "2022", level: "Provinsi",  icon: "emoji_events",  color: "silver",  rank: "2", category: "olahraga" },
+  { title: "Juara 3 POPDA",     event: "Pekan Olahraga Pelajar Daerah",   year: "2023", level: "Daerah",    icon: "military_tech", color: "bronze",  rank: "3", category: "olahraga" },
+  { title: "Peserta POPNAS",    event: "Pekan Olahraga Pelajar Nasional — Jakarta", year: "2025", level: "Nasional", icon: "flag", color: "national", rank: "–", category: "olahraga" },
+  { title: "Juara 1 O2SN",      event: "O2SN Tingkat Kabupaten",          year: "2026", level: "Kabupaten", icon: "emoji_events",  color: "gold",    rank: "1", category: "olahraga" },
+  { title: "Juara 3 O2SN",      event: "O2SN Tingkat Provinsi",           year: "2026", level: "Provinsi",  icon: "military_tech", color: "bronze",  rank: "3", category: "olahraga" },
+  // ── AKADEMIK ──
+  { title: "Ranking 2 Kelas",   event: "Kelas 10 Semester 1",             year: "2024", level: "Akademik",  icon: "school",        color: "silver",  rank: "2", category: "akademik" },
+  { title: "Ranking 1 Kelas",   event: "Kelas 10 Semester 2",             year: "2024", level: "Akademik",  icon: "school",        color: "gold",    rank: "1", category: "akademik" },
+  { title: "Ranking 3 Kelas",   event: "Kelas 11 Semester 1",             year: "2025", level: "Akademik",  icon: "school",        color: "bronze",  rank: "3", category: "akademik" },
+  { title: "Ranking 1 Kelas",   event: "Kelas 11 Semester 2",             year: "2025", level: "Akademik",  icon: "school",        color: "gold",    rank: "1", category: "akademik" },
 ];
 
 export const PROJECTS: Project[] = [
