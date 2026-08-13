@@ -5,17 +5,17 @@ export const About: React.FC = () => {
   return (
     <section
       id="about"
-      className="py-16 md:py-24 px-4 md:px-16 max-w-[1280px] mx-auto relative z-10 glass-panel rounded-3xl border border-white/10 shadow-2xl my-12"
+      className="py-16 md:py-24 px-4 md:px-16 max-w-[1280px] mx-auto relative z-10 glass-panel rounded-3xl border border-slate-200 dark:border-white/10 shadow-xl my-12"
     >
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center">
         {/* Left Side: Portrait / Visual */}
         <div className="lg:col-span-5 relative group order-2 lg:order-1">
           <div className="absolute -inset-1 bg-gradient-to-r from-[#d0bcff] to-[#4cd7f6] rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-300"></div>
-          <div className="relative rounded-xl overflow-hidden glass-panel border border-white/10 aspect-[4/5] flex items-center justify-center bg-[#1d2022]/80">
+          <div className="relative rounded-xl overflow-hidden glass-panel border border-slate-200 dark:border-white/10 aspect-[4/5] flex items-center justify-center bg-slate-100 dark:bg-[#1d2022]/80">
             <img
-              src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"
+              src="/about-photo.jpg"
               alt="Kevin Dwi Andhika Ahmad Yarmis"
-              className="w-full h-full object-cover object-center grayscale hover:grayscale-0 transition-all duration-700 opacity-80 group-hover:opacity-100"
+              className="w-full h-full object-cover object-center hover:scale-105 transition-all duration-700"
             />
             {/* Subtle floating overlay icon */}
             <div className="absolute bottom-4 right-4 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/10 flex items-center gap-2">
@@ -36,12 +36,12 @@ export const About: React.FC = () => {
           </div>
 
           {/* Headline */}
-          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold text-[#e0e3e5] leading-snug">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold text-slate-800 dark:text-[#e0e3e5] leading-snug">
             Translating complex logic into <span className="text-[#4cd7f6]">elegant</span> interfaces.
           </h2>
 
           {/* Paragraphs */}
-          <div className="space-y-4 text-base text-[#cbc3d7] leading-relaxed">
+          <div className="space-y-4 text-base text-slate-500 dark:text-[#cbc3d7] leading-relaxed">
             {PERSONAL_INFO.about.map((paragraph, index) => (
               <p key={index}>{paragraph}</p>
             ))}
@@ -52,12 +52,12 @@ export const About: React.FC = () => {
             {PERSONAL_INFO.education.map((item, idx) => (
               <div
                 key={idx}
-                className={`glass-panel p-4 rounded-xl border border-white/5 ${item.border} border-l-4 bg-[#1d2022]/50 hover:bg-[#1d2022]/80 transition-colors`}
+                className={`glass-panel p-4 rounded-xl border border-slate-200 dark:border-white/5 ${item.border} border-l-4 bg-white/60 dark:bg-[#1d2022]/50 hover:bg-white dark:hover:bg-[#1d2022]/80 transition-colors`}
               >
-                <h3 className="font-display text-xl font-bold text-[#e0e3e5] mb-1">
+                <h3 className="font-display text-xl font-bold text-slate-800 dark:text-[#e0e3e5] mb-1">
                   {item.title}
                 </h3>
-                <p className="font-mono-caps text-xs text-[#cbc3d7]/80">
+                <p className="font-mono-caps text-xs text-slate-500 dark:text-[#cbc3d7]/80">
                   {item.subtitle}
                 </p>
               </div>

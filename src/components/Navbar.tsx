@@ -46,7 +46,7 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode }) => {
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-[#101415]/80 dark:bg-[#101415]/80 backdrop-blur-md border-b border-white/10 dark:border-white/5 shadow-xl shadow-[#d0bcff]/5 py-3'
+          ? 'bg-white/80 dark:bg-[#0f1214]/80 backdrop-blur-md border-b border-slate-200 dark:border-white/5 shadow-sm py-3'
           : 'bg-transparent py-5'
       }`}
     >
@@ -54,7 +54,7 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode }) => {
         {/* Brand */}
         <a
           href="#home"
-          className="font-display text-2xl md:text-3xl font-bold tracking-tighter text-[#d0bcff] hover:scale-95 transition-transform"
+          className="font-display text-2xl md:text-3xl font-bold tracking-tighter text-violet-600 dark:text-[#d0bcff] hover:scale-95 transition-transform"
         >
           KDAAY
         </a>
@@ -69,8 +69,8 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode }) => {
                 href={`#${link.id}`}
                 className={`font-mono-caps uppercase transition-all duration-300 px-3 py-1 rounded ${
                   isActive
-                    ? 'text-[#d0bcff] border-b-2 border-[#d0bcff] backdrop-blur-lg bg-white/5'
-                    : 'text-[#cbc3d7]/70 hover:text-[#d0bcff] hover:backdrop-blur-lg hover:bg-white/5'
+                    ? 'text-violet-600 dark:text-[#d0bcff] border-b-2 border-violet-500 dark:border-[#d0bcff] bg-violet-50 dark:bg-white/5'
+                    : 'text-slate-500 dark:text-[#cbc3d7]/70 hover:text-violet-600 dark:hover:text-[#d0bcff] hover:bg-violet-50 dark:hover:bg-white/5'
                 }`}
               >
                 {link.label}
@@ -85,7 +85,7 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode }) => {
             onClick={() => setDarkMode(!darkMode)}
             id="theme-toggle"
             aria-label="Toggle Theme"
-            className="p-2.5 rounded-full bg-white/5 hover:bg-white/10 text-[#cbc3d7] hover:text-[#d0bcff] border border-white/10 transition-colors flex items-center justify-center cursor-pointer"
+            className="p-2.5 rounded-full bg-slate-100 dark:bg-white/5 hover:bg-violet-100 dark:hover:bg-white/10 text-slate-500 dark:text-[#cbc3d7] hover:text-violet-600 dark:hover:text-[#d0bcff] border border-slate-200 dark:border-white/10 transition-colors flex items-center justify-center cursor-pointer"
           >
             <span className="material-symbols-outlined text-xl">
               {darkMode ? 'light_mode' : 'dark_mode'}
@@ -95,7 +95,7 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode }) => {
           {/* Mobile hamburger button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2.5 rounded-full bg-white/5 hover:bg-white/10 text-[#cbc3d7] border border-white/10 transition-colors flex items-center justify-center cursor-pointer"
+            className="md:hidden p-2.5 rounded-full bg-slate-100 dark:bg-white/5 hover:bg-violet-100 dark:hover:bg-white/10 text-slate-500 dark:text-[#cbc3d7] border border-slate-200 dark:border-white/10 transition-colors flex items-center justify-center cursor-pointer"
             aria-label="Toggle Navigation Menu"
           >
             <span className="material-symbols-outlined text-xl">
@@ -107,7 +107,7 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode }) => {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden glass-panel border-t border-white/10 px-6 py-6 mt-2 flex flex-col gap-4 animate-fadeIn">
+        <div className="md:hidden glass-panel border-t border-slate-200 dark:border-white/10 px-6 py-6 mt-2 flex flex-col gap-4 animate-fadeIn">
           {navLinks.map((link) => (
             <a
               key={link.id}
@@ -115,8 +115,8 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode }) => {
               onClick={() => setMobileMenuOpen(false)}
               className={`font-mono-caps uppercase py-2.5 px-4 rounded-lg transition-colors flex items-center justify-between ${
                 activeSection === link.id
-                  ? 'bg-[#d0bcff]/15 text-[#d0bcff] border-l-2 border-[#d0bcff]'
-                  : 'text-[#cbc3d7]/80 hover:text-[#d0bcff] hover:bg-white/5'
+                  ? 'bg-violet-100 dark:bg-[#d0bcff]/15 text-violet-600 dark:text-[#d0bcff] border-l-2 border-violet-500 dark:border-[#d0bcff]'
+                  : 'text-slate-500 dark:text-[#cbc3d7]/80 hover:text-violet-600 dark:hover:text-[#d0bcff] hover:bg-violet-50 dark:hover:bg-white/5'
               }`}
             >
               <span>{link.label}</span>
